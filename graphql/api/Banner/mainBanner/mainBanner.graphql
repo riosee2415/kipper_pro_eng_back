@@ -1,0 +1,22 @@
+type Query {
+  getMainBanner(searchName: String!): [MainBanner!]!
+  getMainBannerAll: [MainBanner!]!
+  getMainBannerOne(id: String!): MainBanner!
+}
+
+type Mutation {
+  deleteMainBanner(id: String!): Boolean!
+  modifyMainBanner(
+    id: String!
+    title: String!
+    link: String!
+    desc: String!
+    thumbnail: String!
+  ): Boolean!
+  registerMainBanner(
+    title: String!
+    link: String!
+    thumbnailPath: String!
+    description: String!
+  ): Boolean!
+}

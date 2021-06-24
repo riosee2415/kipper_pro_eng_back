@@ -1,0 +1,11 @@
+type Query {
+  getPopup(searchName: String!): [Popup!]!
+  getPopupAll: [Popup!]!
+  getPopupOne(id: String!): Popup!
+}
+
+type Mutation {
+  deletePopup(id: String!): Boolean!
+  modifyPopup(id: String!, title: String!, thumbnail: String!): Boolean!
+  registerPopup(title: String!, thumbnailPath: String!): Boolean!
+}

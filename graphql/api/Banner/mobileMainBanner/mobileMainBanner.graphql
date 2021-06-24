@@ -1,0 +1,22 @@
+type Query {
+  getMobileMainBanner(searchName: String!): [MobileMainBanner!]!
+  getMobileMainBannerAll: [MobileMainBanner!]!
+  getMobileMainBannerOne(id: String!): MobileMainBanner!
+}
+
+type Mutation {
+  deleteMobileMainBanner(id: String!): Boolean!
+  modifyMobileMainBanner(
+    id: String!
+    title: String!
+    link: String!
+    desc: String!
+    thumbnail: String!
+  ): Boolean!
+  registerMobileMainBanner(
+    title: String!
+    link: String!
+    thumbnailPath: String!
+    description: String!
+  ): Boolean!
+}

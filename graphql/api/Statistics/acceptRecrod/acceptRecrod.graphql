@@ -1,0 +1,26 @@
+type Query {
+  getAcceptRecord(
+    searchIp: String!
+    searchLocation: String!
+    searchDevice: String!
+    searchPlatform: String!
+    searchBrowser: String!
+    currentYear: String!
+  ): [AcceptRecrod!]!
+  getAcceptRecordByMonth(currentMonth: String!): [AcceptRecrod!]!
+  getAcceptRecordByDate(currentDate: String!): [AcceptRecrod!]!
+  getAcceptRecordByYesterday(currentYesterday: String!): [AcceptRecrod!]!
+  getAcceptRecordAllYear(year: String!): [AcceptRecrod!]!
+}
+
+type Mutation {
+  addAcceptRecord(
+    date: String!
+    browser: String!
+    platform: String!
+    device: String!
+    ipAdress: String!
+    title: String!
+    isVisit: Boolean!
+  ): Boolean!
+}

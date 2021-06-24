@@ -1,0 +1,9 @@
+type Query {
+  getBoardType: [BoardType]!
+}
+
+type Mutation {
+  createBoardType(title: String!, type: String!): Boolean!
+  updateBoardType(id: String!, title: String!, type: String!): Boolean!
+  deleteBoardType(id: String!): Boolean!
+}

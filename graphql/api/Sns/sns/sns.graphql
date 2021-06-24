@@ -1,0 +1,9 @@
+type Query {
+  getAllSns: [Sns]!
+}
+
+type Mutation {
+  createSns(platform: String!, url: String!): Boolean!
+  updateSns(id: String!, platform: String!, url: String!): Boolean!
+  deleteSns(id: String!): Boolean!
+}

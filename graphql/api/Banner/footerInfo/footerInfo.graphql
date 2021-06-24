@@ -1,0 +1,9 @@
+type Query {
+  getAllFooterInfo: [FooterInfo]!
+}
+
+type Mutation {
+  createFooterList(title: String!, content: String!): Boolean!
+  updateFooterList(id: String!, title: String!, content: String!): Boolean!
+  deleteFooterList(id: String!): Boolean!
+}
