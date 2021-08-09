@@ -202,3 +202,118 @@ type Sns {
   url: String!
   isDelete: Boolean!
 }
+type Sign { #수상내역
+  _id: ID!
+  title: String!
+  thumbnail: String!
+  isDelete: Boolean!
+  type: String!
+}
+
+type Reference { #제품 사용설명서
+  _id: ID!
+  title: String!
+  subTitle: String!
+  content: String!
+  thumbnailPath: String!
+  filePath: String!
+  fileOriginName: String!
+  link: String!
+  isDelete: Boolean!
+}
+
+type Catalogue { #카탈로그 표준제안서
+  _id: ID!
+  title: String!
+  filePath: String!
+  fileOriginName: String!
+  isDelete: Boolean!
+}
+
+type Exhibition {
+  _id: ID!
+  title: String!
+  thumbnailPath: String!
+  files: [PFiles]!
+  isDelete: Boolean!
+}
+
+type PFiles {
+  _id: ID!
+  filePath: String!
+}
+type Product {
+  _id: ID!
+  thumbnailPath: String! # 썸네일
+  thumbnailPath2: String! # 썸네일
+  # colorImage: [ColorImages]! #색상 별 제품 이미지
+  productType: String! #제품 타입 ex) USB물리보안, 네트워크 물리보안
+  productSubType: String! #제품 서브타입 ex) USB Type-A, Type-B
+  keyType: String! #제품 키타입
+  mainTitle: String! #제품 최상단 타이틀
+  productName: String! #제품명
+  modelName: String! #모델명
+  size: String! #규격
+  weight: String! #중량
+  productIcon: String! #적용대상 아이콘
+  iconContent1: String! #적용대상 이름
+  productContent: String! #제품설명 [Editor]
+  warningContent: String! #주의사항 [Editor]
+  settingImage: String! #사용환경 및 주의사항 백그라운드 이미지
+  settingTitle: String! #사용환경 타이틀 에디터
+  settingContent: String! #사용환경 설명글 [Editor]
+  pointTitle: String! #핵심 특징 타이틀 에디터
+  pointContent1: String #핵심특징 설명글 최대3개 [Editor]
+  pointContent2: String #핵심특징 설명글 최대3개 [Editor]
+  pointContent3: String #핵심특징 설명글 최대3개 [Editor]
+  featureImage1: String! #제퓸특징1 이미지
+  featureTitle1: String! #제품특징1 타이틀 에디터
+  featureSubTitle1: String! #제품특징1 서브타이틀 에디터
+  featureContent1: String! #제품특징1 설명글 [Editor]
+  featureImage2: String! #제품특징2 이미지
+  featureTitle2: String! #제품특징2 타이틀 에디터
+  featureSubTitle2: String! #제품특징2 서브타이틀 에디터
+  featureContent2: String! #제품특징2 설명글 [Editor]
+  specName: String! #Specification 제품명 에디터
+  specImage1: String! #Specification 이미지1
+  specImage2: String! #Specification 이미지2
+  specImage3: String! #Specification 이미지3
+  specDetailTitle1: String #Specification 설명글 에디터
+  specDetailContent1: String #Specification 설명글 [Editor]
+  specDetailImage1: String #Specification
+  specDetailTitle2: String #Specification 설명글 에디터
+  specDetailContent2: String #Specification 설명글 [Editor]
+  specDetailImage2: String #Specification
+  specDetailTitle3: String #Specification 설명글 에디터
+  specDetailContent3: String #Specification 설명글 [Editor]
+  specDetailImage3: String #Specification
+  finalTitle: String! #맺음말 타이틀 [Editor]
+  finalContent: String! #맺음말 본문 [Editor]
+  cerIconImage1: String
+  cerIconImage2: String
+  cerIconImage3: String
+  cerIconImage4: String
+  cerIconImage5: String
+  cerIconImage6: String
+  cerContent1: String
+  cerContent2: String
+  cerContent3: String
+  cerContent4: String
+  cerContent5: String
+  cerContent6: String
+  filePath1: String! #사용설명서
+  fileOriginName1: String!
+  filePath2: String! #해당제품상세페이지
+  fileOriginName2: String!
+  createdAt: String!
+  isDelete: Boolean!
+  deletedAt: String!
+}
+
+type ColorImages { #색상 별 제품 이미지
+  _id: ID!
+  imagePath: String!
+  color: String!
+  colorCode: String!
+  sort: Int!
+}

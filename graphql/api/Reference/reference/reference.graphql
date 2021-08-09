@@ -1,0 +1,36 @@
+type Query {
+  getReference(searchName: String!): [Reference!]!
+  getReferenceAll: [Reference!]!
+  getReferenceOne(id: String!): Reference!
+
+  getReferenceClient(
+    searchValue: String!
+    limit: Int!
+    currentPage: Int!
+  ): [Reference!]!
+  getReferenceTotalPageClient(searchValue: String!, limit: Int!): Int!
+  getReferenceTotalPageOnlyCntClient(searchValue: String!): Int!
+}
+
+type Mutation {
+  deleteReference(id: String!): Boolean!
+  modifyReference(
+    id: String!
+    title: String!
+    subTitle: String!
+    thumbnail: String!
+    filePath: String!
+    fileOriginName: String!
+    link: String!
+    content: String!
+  ): Boolean!
+  registerReference(
+    title: String!
+    subTitle: String!
+    thumbnailPath: String!
+    filePath: String!
+    fileOriginName: String!
+    link: String!
+    content: String!
+  ): Boolean!
+}

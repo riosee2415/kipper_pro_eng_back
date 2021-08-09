@@ -1,0 +1,19 @@
+type Query {
+  getSign(limit: Int!, currentPage: Int!): [Sign!]!
+  getSignList: [Sign!]!
+  getSignTotalPage(limit: Int!): Int!
+  getSignDetail(id: String!): Sign!
+  getSignNextId(id: String!): Sign
+  getSignBeforeId(id: String!): Sign
+}
+type Mutation {
+  createSign(thumbnail: String!, title: String!, type: String!): Boolean!
+  deleteSign(id: String!): Boolean!
+  modifySignBasic(
+    id: String!
+    title: String!
+    thumbnail: String!
+    type: String!
+  ): Boolean!
+  deleteSign(id: String!): Boolean!
+}

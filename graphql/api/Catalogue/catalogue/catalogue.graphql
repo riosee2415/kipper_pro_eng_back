@@ -1,0 +1,26 @@
+type Query {
+  getAllCatalogue: [Catalogue]!
+
+  getCatalogueClient(
+    searchValue: String!
+    limit: Int!
+    currentPage: Int!
+  ): [Catalogue!]!
+  getCatalogueTotalPageClient(searchValue: String!, limit: Int!): Int!
+  getCatalogueTotalPageOnlyCntClient(searchValue: String!): Int!
+}
+
+type Mutation {
+  createCatalogue(
+    title: String!
+    filePath: String!
+    fileOriginName: String!
+  ): Boolean!
+  updateCatalogue(
+    id: String!
+    title: String!
+    filePath: String!
+    fileOriginName: String!
+  ): Boolean!
+  deleteCatalogue(id: String!): Boolean!
+}

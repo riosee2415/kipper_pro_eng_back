@@ -1,0 +1,21 @@
+type Query {
+  getExhibition(searchName: String!): [Exhibition!]!
+  getExhibitionAll: [Exhibition!]!
+  getExhibitionOne(id: String!): Exhibition!
+}
+
+type Mutation {
+  deleteExhibition(id: String!): Boolean!
+  modifyExhibition(id: String!, title: String!, thumbnail: String!): Boolean!
+  registerExhibition(
+    thumbnailPath: String!
+    title: String!
+    innerImageList: [String]!
+  ): Boolean!
+  createColorImages(
+    imagePath: String!
+    color: String!
+    colorCode: String!
+    sort: Int!
+  ): ColorImages!
+}
