@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 
 const Product = new Schema(
   {
-    // colorImage: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: `ColorImages`,
-    //   },
-    // ],
+    colorImage: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: `ColorImages`,
+      },
+    ],
     productType: {
       type: String,
       required: true,

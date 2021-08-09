@@ -246,7 +246,7 @@ type Product {
   _id: ID!
   thumbnailPath: String! # 썸네일
   thumbnailPath2: String! # 썸네일
-  # colorImage: [ColorImages]! #색상 별 제품 이미지
+  colorImage: [ColorImages]! #색상 별 제품 이미지
   productType: String! #제품 타입 ex) USB물리보안, 네트워크 물리보안
   productSubType: String! #제품 서브타입 ex) USB Type-A, Type-B
   keyType: String! #제품 키타입
