@@ -1,4 +1,4 @@
-import Catalogue from "../../../../../keeper-pro-kr-backEnd/graphql/models/Catalogue";
+import Catalogue from "../../../models/Catalogue";
 
 export default {
   Query: {

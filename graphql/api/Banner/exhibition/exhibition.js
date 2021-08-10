@@ -1,7 +1,7 @@
-import Exhibition from "../../../../../keeper-pro-kr-backEnd/graphql/models/Exhibition";
-import PFiles from "../../../../../keeper-pro-kr-backEnd/graphql/models/PFiles";
-import ColorImages from "../../../../../keeper-pro-kr-backEnd/graphql/models/ColorImages";
-import { CURRENT_TIME } from "../../../../../keeper-pro-kr-backEnd/utils/commonUtils";
+import Exhibition from "../../../models/Exhibition";
+import PFiles from "../../../models/PFiles";
+import ColorImages from "../../../models/ColorImages";
+import { CURRENT_TIME } from "../../../../utils/commonUtils";
 import mongoose from "mongoose";
 
 export default {
@@ -148,14 +148,14 @@ export default {
       const { imagePath, color, colorCode, sort } = args;
 
       try {
-        const restult = await ColorImages.create({
+        const result = await ColorImages.create({
           imagePath,
           color,
           colorCode,
           sort,
         });
 
-        return restult;
+        return result;
       } catch (error) {
         console.log(error);
         return {};
