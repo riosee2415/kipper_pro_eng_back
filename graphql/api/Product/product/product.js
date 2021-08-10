@@ -139,6 +139,9 @@ export default {
         fileOriginName1,
         filePath2,
         fileOriginName2,
+        price,
+        vipPrice1,
+        vipPrice2,
       } = args;
 
       try {
@@ -207,6 +210,9 @@ export default {
           fileOriginName2,
           createdAt: current,
           isDelete: false,
+          price,
+          vipPrice1,
+          vipPrice2,
         });
 
         const product = await Product.findOne({ _id: result._id });
@@ -290,6 +296,9 @@ export default {
         fileOriginName1,
         filePath2,
         fileOriginName2,
+        price,
+        vipPrice1,
+        vipPrice2,
       } = args;
 
       try {
@@ -359,6 +368,9 @@ export default {
               fileOriginName1,
               filePath2,
               fileOriginName2,
+              price,
+              vipPrice1,
+              vipPrice2,
             },
           }
         );

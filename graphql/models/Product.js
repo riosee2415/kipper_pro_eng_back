@@ -272,6 +272,18 @@ const Product = new Schema(
       required: true,
       default: `-`,
     },
+    price: {
+      type: String,
+      required: true,
+    },
+    vipPrice1: {
+      type: String,
+      required: true,
+    },
+    vipPrice2: {
+      type: String,
+      required: true,
+    },
   },
   {
     versionKey: false,

@@ -73,6 +73,9 @@ type Mutation {
     fileOriginName1: String!
     filePath2: String!
     fileOriginName2: String!
+    price: String!
+    vipPrice1: String!
+    vipPrice2: String!
   ): Boolean!
 
   modifyProduct(
@@ -138,5 +141,8 @@ type Mutation {
     fileOriginName1: String!
     filePath2: String!
     fileOriginName2: String!
+    price: String!
+    vipPrice1: String!
+    vipPrice2: String!
   ): Boolean!
 }

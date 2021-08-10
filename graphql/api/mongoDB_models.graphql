@@ -308,6 +308,9 @@ type Product {
   createdAt: String!
   isDelete: Boolean!
   deletedAt: String!
+  price: String!
+  vipPrice1: String!
+  vipPrice2: String!
 }
 
 type ColorImages { #색상 별 제품 이미지
