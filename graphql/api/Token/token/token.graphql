@@ -1,0 +1,18 @@
+type Query {
+  getAllToken: [Token!]!
+}
+
+type Mutation {
+  createToken(
+    userId: String!
+    passWord: String!
+    passWordRe: String!
+    contry: String!
+    level: String!
+    companyName: String!
+    charge: String!
+    email: String!
+    tel: String!
+  ): Token!
+  deleteToken(id: String!): Boolean!
+}

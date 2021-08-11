@@ -308,9 +308,9 @@ type Product {
   createdAt: String!
   isDelete: Boolean!
   deletedAt: String!
-  price: String!
-  vipPrice1: String!
-  vipPrice2: String!
+  price: String! #기본가격
+  vipPrice1: String! #LEVEL3 가격
+  vipPrice2: String! #LEVEL4 가격
 }
 
 type ColorImages { #색상 별 제품 이미지
@@ -319,4 +319,19 @@ type ColorImages { #색상 별 제품 이미지
   color: String!
   colorCode: String!
   sort: Int!
+}
+
+type Token {
+  _id: ID!
+  userId: String!
+  passWord: String!
+  passWordRe: String!
+  contry: String
+  level: String!
+  companyName: String!
+  charge: String!
+  email: String!
+  tel: String!
+  createdAt: String!
+  isDelete: Boolean!
 }
