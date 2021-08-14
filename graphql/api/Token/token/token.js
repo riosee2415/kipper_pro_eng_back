@@ -15,6 +15,38 @@ export default {
         return [];
       }
     },
+
+    getTokenForLogin: async (_, args) => {
+      const { userId, password } = args;
+
+      try {
+        const result = await Token.findOne({
+          userId,
+          passWord: password,
+          isDelete: false,
+        });
+
+        return result;
+      } catch (e) {
+        console.log(e);
+        return null;
+      }
+    },
+
+    getToken: async (_, args) => {
+      const { id } = args;
+
+      try {
+        const result = await Token.findOne({
+          _id: id,
+        });
+
+        return result;
+      } catch (e) {
+        console.log(e);
+        return {};
+      }
+    },
   },
 
   Mutation: {

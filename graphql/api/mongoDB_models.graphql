@@ -327,7 +327,7 @@ type Token {
   passWord: String!
   passWordRe: String!
   contry: String
-  level: String!
+  level: String! # ["LEVEL3", "LEVEL4"]
   companyName: String!
   charge: String!
   email: String!

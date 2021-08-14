@@ -1,5 +1,7 @@
 type Query {
   getAllToken: [Token!]!
+  getTokenForLogin(userId: String!, password: String!): Token
+  getToken(id: String!): Token!
 }
 
 type Mutation {

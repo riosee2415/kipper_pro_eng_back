@@ -17,14 +17,26 @@ export default {
 
       try {
         const result = await Catalogue.find({
-          title: { $regex: `.*${searchValue}.*` },
           isDelete: false,
-        })
+        });
 
-          .limit(limit)
-          .skip(currentPage * limit);
+        let finalResult = result.filter((data) => {
+          if (
+            data.title
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
 
-        return result;
+        return finalResult.slice(
+          currentPage * limit,
+          currentPage * limit + limit
+        );
       } catch (e) {
         console.log(e);
         return [];
@@ -36,11 +48,23 @@ export default {
 
       try {
         const result = await Catalogue.find({
-          title: { $regex: `.*${searchValue}.*` },
           isDelete: false,
         });
 
-        const cnt = result.length;
+        let finalResult = result.filter((data) => {
+          if (
+            data.title
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+        const cnt = finalResult.length;
 
         const realTotalPage = cnt % limit > 0 ? cnt / limit + 1 : cnt / limit;
 
@@ -56,11 +80,23 @@ export default {
 
       try {
         const result = await Catalogue.find({
-          title: { $regex: `.*${searchValue}.*` },
           isDelete: false,
         });
 
-        const cnt = result.length;
+        let finalResult = result.filter((data) => {
+          if (
+            data.title
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+        const cnt = finalResult.length;
 
         return parseInt(cnt);
       } catch (e) {

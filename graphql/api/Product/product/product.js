@@ -10,14 +10,6 @@ export default {
 
       try {
         const result = await Product.find({
-          $or: [
-            {
-              keyType: { $regex: `.*${searchValue}.*` },
-            },
-            {
-              mainTitle: { $regex: `.*${searchValue}.*` },
-            },
-          ],
           productType: { $regex: `.*${productType}.*` },
           productSubType: { $regex: `.*${productSubType}.*` },
           isDelete: false,
@@ -25,7 +17,24 @@ export default {
           createdAt: 1,
         });
 
-        return result;
+        let finalResult = result.filter((data) => {
+          if (
+            data.keyType
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase()) ||
+            data.mainTitle
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+        return finalResult;
       } catch (error) {
         console.log(error);
         return [];
