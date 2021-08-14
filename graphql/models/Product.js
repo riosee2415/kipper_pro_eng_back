@@ -275,14 +275,17 @@ const Product = new Schema(
     price: {
       type: String,
       required: true,
+      default: "0",
     },
     vipPrice1: {
       type: String,
       required: true,
+      default: "0",
     },
     vipPrice2: {
       type: String,
       required: true,
+      default: "0",
     },
   },
   {
