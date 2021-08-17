@@ -49,10 +49,12 @@ export default {
           productName: { $regex: `.*${searchName}.*` },
           productType: { $regex: `.*${searchType}.*` },
           isDelete: false,
-        }).populate({
-          path: `colorImage`,
-          model: ColorImages,
-        });
+        })
+          .populate({
+            path: `colorImage`,
+            model: ColorImages,
+          })
+          .sort({ sort: 1 });
         return result;
       } catch (e) {
         console.log(e);
@@ -445,6 +447,26 @@ export default {
         );
 
         currentProduct.save();
+
+        return true;
+      } catch (e) {
+        console.log(e);
+        return false;
+      }
+    },
+
+    updateProductSort: async (_, args) => {
+      const { id, sort } = args;
+
+      try {
+        const result = await Product.updateOne(
+          { _id: id },
+          {
+            $set: {
+              sort: parseInt(sort),
+            },
+          }
+        );
 
         return true;
       } catch (e) {

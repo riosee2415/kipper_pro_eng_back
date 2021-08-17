@@ -287,6 +287,11 @@ const Product = new Schema(
       required: true,
       default: "0",
     },
+    sort: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
   },
   {
     versionKey: false,
