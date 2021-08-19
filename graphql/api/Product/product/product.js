@@ -14,7 +14,7 @@ export default {
           productSubType: { $regex: `.*${productSubType}.*` },
           isDelete: false,
         }).sort({
-          createdAt: 1,
+          sort: 1,
         });
 
         let finalResult = result.filter((data) => {
