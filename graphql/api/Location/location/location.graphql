@@ -1,0 +1,9 @@
+type Query {
+  getAllLocation: [Location]!
+}
+
+type Mutation {
+  createLocation(title: String!, link: String!): Boolean!
+  updateLocation(id: String!, title: String!, link: String!): Boolean!
+  # deleteLocation(id: String!): Boolean!
+}
