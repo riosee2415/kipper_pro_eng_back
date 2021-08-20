@@ -153,6 +153,9 @@ export default {
         price,
         vipPrice1,
         vipPrice2,
+        pointNumber1,
+        pointNumber2,
+        pointNumber3,
       } = args;
 
       try {
@@ -224,6 +227,9 @@ export default {
           price,
           vipPrice1,
           vipPrice2,
+          pointNumber1,
+          pointNumber2,
+          pointNumber3,
         });
 
         const product = await Product.findOne({ _id: result._id });
@@ -310,6 +316,9 @@ export default {
         price,
         vipPrice1,
         vipPrice2,
+        pointNumber1,
+        pointNumber2,
+        pointNumber3,
       } = args;
 
       try {
@@ -382,6 +391,9 @@ export default {
               price,
               vipPrice1,
               vipPrice2,
+              pointNumber1,
+              pointNumber2,
+              pointNumber3,
             },
           }
         );

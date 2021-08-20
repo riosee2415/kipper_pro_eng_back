@@ -292,6 +292,18 @@ const Product = new Schema(
       required: true,
       default: 0,
     },
+    pointNumber1: {
+      type: String,
+      required: false,
+    },
+    pointNumber2: {
+      type: String,
+      required: false,
+    },
+    pointNumber3: {
+      type: String,
+      required: false,
+    },
   },
   {
     versionKey: false,

@@ -312,6 +312,9 @@ type Product {
   vipPrice1: String! #LEVEL3 가격
   vipPrice2: String! #LEVEL4 가격
   sort: Int!
+  pointNumber1: String
+  pointNumber2: String
+  pointNumber3: String
 }
 
 type ColorImages { #색상 별 제품 이미지
