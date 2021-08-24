@@ -26,6 +26,10 @@ export default {
             data.mainTitle
               .replace(/ /g, "")
               .toLowerCase()
+              .includes(searchValue.replace(/ /g, "").toLowerCase()) ||
+            data.modelName
+              .replace(/ /g, "")
+              .toLowerCase()
               .includes(searchValue.replace(/ /g, "").toLowerCase())
           ) {
             return true;
