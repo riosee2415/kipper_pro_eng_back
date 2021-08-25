@@ -76,6 +76,9 @@ type Mutation {
     price: String!
     vipPrice1: String!
     vipPrice2: String!
+    pointNumber1: String
+    pointNumber2: String
+    pointNumber3: String
   ): Boolean!
 
   modifyProduct(
@@ -144,6 +147,9 @@ type Mutation {
     price: String!
     vipPrice1: String!
     vipPrice2: String!
+    pointNumber1: String
+    pointNumber2: String
+    pointNumber3: String
   ): Boolean!
   updateProductSort(id: String!, sort: Int!): Boolean!
 }
