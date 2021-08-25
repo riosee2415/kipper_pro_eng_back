@@ -46,7 +46,6 @@ export default {
 
       try {
         const result = await Product.find({
-          productName: { $regex: `.*${searchName}.*` },
           productType: { $regex: `.*${searchType}.*` },
           isDelete: false,
         })
@@ -55,7 +54,21 @@ export default {
             model: ColorImages,
           })
           .sort({ sort: 1 });
-        return result;
+
+        let finalResult = result.filter((data) => {
+          if (
+            data.productName
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchName.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+        return finalResult;
       } catch (e) {
         console.log(e);
         return [];
