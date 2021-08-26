@@ -140,12 +140,13 @@ export default {
     },
 
     modifyFaq: async (_, args) => {
-      const { id, answer } = args;
+      const { id, question, answer } = args;
 
       try {
         const result = await Faq.updateOne(
           { _id: id },
           {
+            question,
             answer,
           }
         );

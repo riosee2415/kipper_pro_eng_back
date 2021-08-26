@@ -20,5 +20,5 @@ type Mutation {
     type: String!
   ): Boolean!
   deleteFaq(id: String!): Boolean!
-  modifyFaq(id: String!, answer: String!): Boolean!
+  modifyFaq(id: String!, question: String!, answer: String!): Boolean!
 }
