@@ -8,11 +8,23 @@ export default {
 
       try {
         const result = await Reference.find({
-          title: { $regex: `.*${searchName}.*` },
           isDelete: false,
         }).sort({ title: -1 });
 
-        return result;
+        let finalResult = result.filter((data) => {
+          if (
+            data.title
+              .replace(/ /g, "")
+              .toLowerCase()
+              .includes(searchName.replace(/ /g, "").toLowerCase())
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+
+        return finalResult;
       } catch (e) {
         console.log(e);
         return [];
