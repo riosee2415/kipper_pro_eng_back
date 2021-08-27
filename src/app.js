@@ -47,12 +47,13 @@ app.get("/*", (req, res) => {
     };
 });
 */
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "path/to/your/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
+app.get("/*", (req, res) => {
+  res.sendFile(__dirname),
+    (err) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+    };
 });
 
 // Must add this code in nginx server conf file -> LOTATE => location/ { **  ... root /home/...;  index.html index.htm; ... /} [CSR]
