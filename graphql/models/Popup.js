@@ -30,6 +30,15 @@ const Popup = new Schema(
       type: String,
       required: true,
     },
+    link: {
+      type: String,
+      required: true,
+    },
+    onoff: {
+      type: String,
+      required: true,
+      default: "OFF",
+    },
   },
   {
     versionKey: false,

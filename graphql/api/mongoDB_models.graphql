@@ -41,6 +41,8 @@ type Popup {
   createdAt: String!
   deletedAt: String!
   updatedAt: String!
+  link: String!
+  onoff: String!
 }
 
 type FooterInfo {

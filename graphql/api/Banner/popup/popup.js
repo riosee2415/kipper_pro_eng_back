@@ -48,7 +48,7 @@ export default {
 
   Mutation: {
     modifyPopup: async (_, args) => {
-      const { id, title, thumbnail } = args;
+      const { id, title, thumbnail, link, onoff } = args;
 
       try {
         const current = await CURRENT_TIME();
@@ -60,6 +60,8 @@ export default {
               title: title,
               thumbnailPath: thumbnail,
               updatedAt: current,
+              link: link,
+              onoff: onoff,
             },
           }
         );
@@ -72,18 +74,20 @@ export default {
     },
 
     registerPopup: async (_, args) => {
-      const { title, thumbnailPath } = args;
+      const { title, thumbnailPath, link } = args;
 
       try {
         const current = await CURRENT_TIME();
 
         const result = await Popup.create({
           title: title,
+          link: link,
           thumbnailPath: thumbnailPath,
           isDelete: false,
           createdAt: current,
           updatedAt: current,
           deleteAt: "-",
+          onoff: "OFF",
         });
 
         return true;

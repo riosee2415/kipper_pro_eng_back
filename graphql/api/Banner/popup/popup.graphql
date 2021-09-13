@@ -6,6 +6,12 @@ type Query {
 
 type Mutation {
   deletePopup(id: String!): Boolean!
-  modifyPopup(id: String!, title: String!, thumbnail: String!): Boolean!
-  registerPopup(title: String!, thumbnailPath: String!): Boolean!
+  modifyPopup(
+    id: String!
+    title: String!
+    thumbnail: String!
+    link: String!
+    onoff: String!
+  ): Boolean!
+  registerPopup(title: String!, thumbnailPath: String!, link: String!): Boolean!
 }
